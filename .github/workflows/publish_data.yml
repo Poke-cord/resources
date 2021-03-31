@@ -1,0 +1,19 @@
+name: Publish data
+on:
+  push:	
+    branches:	
+      - main
+
+jobs:
+  deploy:
+    name: Publish to data branch
+    runs-on: ubuntu-latest    
+    steps:
+    - uses: actions/checkout@master
+    - name: Publish
+      uses: s0/git-publish-subdir-action@v2.4.0
+      env:
+        REPO: self
+        BRANCH: data
+        FOLDER: data
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
