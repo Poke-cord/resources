@@ -1,19 +1,24 @@
 name: Publish data
 on:
-  push:	
-    branches:	
+  push:
+    branches:
       - main
 
 jobs:
   deploy:
     name: Publish to data branch
-    runs-on: ubuntu-latest    
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: Publish
-      uses: s0/git-publish-subdir-action@v2.4.0
-      env:
-        REPO: self
-        BRANCH: data
-        FOLDER: data
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+      - name: Collect resources
+        run: yarn && yarn build && yarn start
+      - name: Publish
+        uses: s0/git-publish-subdir-action@v2.4.0
+        env:
+          REPO: self
+          BRANCH: data
+          FOLDER: data
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

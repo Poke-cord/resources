@@ -185,3 +185,9 @@ export interface Stats {
   "special-defense": number;
   speed: number;
 }
+export interface IMachine {
+  tmId: number;
+  versionGroupId: number;
+  itemId: number;
+  moveId: number;
+}
