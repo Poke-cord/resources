@@ -15,6 +15,8 @@ jobs:
           node-version: "14"
       - name: Collect resources
         run: yarn && yarn build && yarn start
+      - name: Delete CSV files
+        run: rm data/*.csv
       - name: Publish
         uses: s0/git-publish-subdir-action@v2.4.0
         env:
