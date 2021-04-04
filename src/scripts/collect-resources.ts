@@ -417,30 +417,6 @@ const resourceInfos: ResourceInfo[] = [
     headers: ["growthRateId", "level", "experience"],
     numberHeaders: ["growthRateId", "level", "experience"],
     remoteUrl: `https://github.com/PokeAPI/pokeapi/raw/${BRANCH_OR_COMMIT_HASH}/data/v2/csv/experience.csv`,
-    preSave: (elements) => {
-      // eslint-disable-next-line
-      const editedElements: any[] = [];
-      for (const element of elements) {
-        const existingElement = editedElements.find((x) => x.id === element.id);
-        if (existingElement) {
-          existingElement.efficacies.push({
-            targetTypeId: element.targetTypeId,
-            damageFactor: element.damageFactor,
-          });
-        } else {
-          editedElements.push({
-            id: element.id,
-            efficacies: [
-              {
-                targetTypeId: element.targetTypeId,
-                damageFactor: element.damageFactor,
-              },
-            ],
-          });
-        }
-      }
-      return editedElements;
-    },
   },
   // #endregion
   // #region Stats
