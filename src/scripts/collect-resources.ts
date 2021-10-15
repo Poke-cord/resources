@@ -358,6 +358,18 @@ const resourceInfos: ResourceInfo[] = [
     remoteUrl: `https://github.com/PokeAPI/pokeapi/raw/${BRANCH_OR_COMMIT_HASH}/data/v2/csv/move_target_prose.csv`,
   },
   // #endregion
+  // #region Nature Battle Style Preferences
+  {
+    headers: ["id", "moveBattleStyleId", "lowHpPreference", "highHpPreference"],
+    numberHeaders: [
+      "id",
+      "moveBattleStyleId",
+      "lowHpPreference",
+      "highHpPreference",
+    ],
+    remoteUrl: `https://github.com/PokeAPI/pokeapi/raw/${BRANCH_OR_COMMIT_HASH}/data/v2/csv/nature_battle_style_preferences.csv`,
+  },
+  // #endregion
   // #region Pokemon Moves
   {
     headers: [
