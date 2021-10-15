@@ -228,6 +228,14 @@ const resourceInfos: ResourceInfo[] = [
     headers: ["id", "languageId", "shortEffect", "effect"],
     numberHeaders: ["id", "languageId"],
     remoteUrl: `https://github.com/PokeAPI/pokeapi/raw/${BRANCH_OR_COMMIT_HASH}/data/v2/csv/move_effect_prose.csv`,
+    prePush: (obj) => {
+      if (obj.field5) {
+        // hack for when the a field has a comma in the value
+        obj.shortEffect = `${obj.shortEffect}, ${obj.effect}`;
+        obj.effect = obj.field5;
+        delete obj.field5;
+      }
+    },
   },
   // #endregion
   // #region Move Flags
