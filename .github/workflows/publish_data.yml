@@ -15,6 +15,8 @@ jobs:
           node-version: "14"
       - name: Collect resources
         run: yarn && yarn build && yarn start
+      - name: Run tests
+        run: yarn jest
       - name: Delete CSV files
         run: rm data/*.csv
       - name: Publish
