@@ -33,6 +33,35 @@ const nameHeaders = ["id", "languageId", "name"];
 const nameNumberHeaders = ["id", "languageId"];
 
 const resourceInfos: ResourceInfo[] = [
+  // #region Abilities
+  {
+    headers: ["id", "identifier", "generationId", "isMainSeries"],
+    numberHeaders: ["id", "generationId"],
+    booleanHeaders: ["isMainSeries"],
+    remoteUrl: `https://github.com/PokeAPI/pokeapi/raw/${BRANCH_OR_COMMIT_HASH}/data/v2/csv/abilities.csv`,
+  },
+  // #endregion
+  // #region Ability Flavor Texts
+  {
+    headers: ["id", "versionGroupId", "languageId", "flavorText"],
+    numberHeaders: ["id", "versionGroupId", "languageId"],
+    remoteUrl: `https://github.com/PokeAPI/pokeapi/raw/${BRANCH_OR_COMMIT_HASH}/data/v2/csv/ability_flavor_text.csv`,
+  },
+  // #endregion
+  // #region Ability Names
+  {
+    headers: nameHeaders,
+    numberHeaders: nameNumberHeaders,
+    remoteUrl: `https://github.com/PokeAPI/pokeapi/raw/${BRANCH_OR_COMMIT_HASH}/data/v2/csv/ability_names.csv`,
+  },
+  // #endregion
+  // #region Ability Prose
+  {
+    headers: ["id", "languageId", "shortEffect"],
+    numberHeaders: ["id", "languageId"],
+    remoteUrl: `https://github.com/PokeAPI/pokeapi/raw/${BRANCH_OR_COMMIT_HASH}/data/v2/csv/ability_prose.csv`,
+  },
+  // #endregion
   // #region Growth Rate Names
   {
     headers: nameHeaders,
