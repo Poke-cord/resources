@@ -195,6 +195,78 @@ const resourceInfos: ResourceInfo[] = [
     remoteUrl: `https://github.com/PokeAPI/pokeapi/raw/${BRANCH_OR_COMMIT_HASH}/data/v2/csv/moves.csv`,
   },
   // #endregion
+  // #region Move Battle Styles
+  {
+    headers: ["id", "identifier"],
+    numberHeaders: ["id"],
+    remoteUrl: `https://github.com/PokeAPI/pokeapi/raw/${BRANCH_OR_COMMIT_HASH}/data/v2/csv/move_battle_styles.csv`,
+  },
+  // #endregion
+  // #region Move Battle Style Prose
+  {
+    headers: nameHeaders,
+    numberHeaders: nameNumberHeaders,
+    remoteUrl: `https://github.com/PokeAPI/pokeapi/raw/${BRANCH_OR_COMMIT_HASH}/data/v2/csv/move_battle_style_prose.csv`,
+  },
+  // #endregion
+  // #region Move Damage Classes
+  {
+    headers: ["id", "identifier"],
+    numberHeaders: ["id"],
+    remoteUrl: `https://github.com/PokeAPI/pokeapi/raw/${BRANCH_OR_COMMIT_HASH}/data/v2/csv/move_damage_classes.csv`,
+  },
+  // #endregion
+  // #region Move Damage Class Prose
+  {
+    headers: ["id", "languageId", "name", "description"],
+    numberHeaders: ["id", "languageId"],
+    remoteUrl: `https://github.com/PokeAPI/pokeapi/raw/${BRANCH_OR_COMMIT_HASH}/data/v2/csv/move_damage_class_prose.csv`,
+  },
+  // #endregion
+  // #region Move Effects
+  {
+    headers: ["id", "languageId", "shortEffect", "effect"],
+    numberHeaders: ["id", "languageId"],
+    remoteUrl: `https://github.com/PokeAPI/pokeapi/raw/${BRANCH_OR_COMMIT_HASH}/data/v2/csv/move_effect_prose.csv`,
+  },
+  // #endregion
+  // #region Move Flags
+  {
+    headers: ["id", "identifier"],
+    numberHeaders: ["id"],
+    remoteUrl: `https://github.com/PokeAPI/pokeapi/raw/${BRANCH_OR_COMMIT_HASH}/data/v2/csv/move_flags.csv`,
+  },
+  // #endregion
+  // #region Move Flags Map
+  {
+    headers: ["moveId", "moveFlagId"],
+    numberHeaders: ["moveId", "moveFlagId"],
+    remoteUrl: `https://github.com/PokeAPI/pokeapi/raw/${BRANCH_OR_COMMIT_HASH}/data/v2/csv/move_flag_map.csv`,
+    preSave: (elements) => {
+      const grouped = groupBy(elements, "moveId");
+      return Object.keys(grouped).map((x) => {
+        return {
+          moveId: parseInt(x),
+          flagIds: grouped[x].map((x) => x.moveFlagId),
+        };
+      });
+    },
+  },
+  // #endregion
+  // #region Move Flag Prose
+  {
+    headers: ["id", "languageId", "name", "description"],
+    numberHeaders: ["id", "languageId"],
+    remoteUrl: `https://github.com/PokeAPI/pokeapi/raw/${BRANCH_OR_COMMIT_HASH}/data/v2/csv/move_flag_prose.csv`,
+  },
+  // #endregion
+  // #region Move Flavor Text
+  {
+    headers: ["id", "versionGroupId", "languageId", "flavorText"],
+    numberHeaders: ["id", "versionGroupId", "languageId"],
+    remoteUrl: `https://github.com/PokeAPI/pokeapi/raw/${BRANCH_OR_COMMIT_HASH}/data/v2/csv/move_flavor_text.csv`,
+  },
+  // #endregion
   // #region Move Meta
   {
     headers: [
@@ -228,6 +300,62 @@ const resourceInfos: ResourceInfo[] = [
       "statChance",
     ],
     remoteUrl: `https://github.com/PokeAPI/pokeapi/raw/${BRANCH_OR_COMMIT_HASH}/data/v2/csv/move_meta.csv`,
+  },
+  // #endregion
+  // #region Move Meta Ailments
+  {
+    headers: ["id", "identifier"],
+    numberHeaders: ["id"],
+    remoteUrl: `https://github.com/PokeAPI/pokeapi/raw/${BRANCH_OR_COMMIT_HASH}/data/v2/csv/move_meta_ailments.csv`,
+  },
+  // #endregion
+  // #region Move Meta Ailment Names
+  {
+    headers: ["id", "languageId", "name"],
+    numberHeaders: ["id", "languageId"],
+    remoteUrl: `https://github.com/PokeAPI/pokeapi/raw/${BRANCH_OR_COMMIT_HASH}/data/v2/csv/move_meta_ailment_names.csv`,
+  },
+  // #endregion
+  // #region Move Meta Categories
+  {
+    headers: ["id", "identifier"],
+    numberHeaders: ["id"],
+    remoteUrl: `https://github.com/PokeAPI/pokeapi/raw/${BRANCH_OR_COMMIT_HASH}/data/v2/csv/move_meta_categories.csv`,
+  },
+  // #endregion
+  // #region Move Meta Category Prose
+  {
+    headers: ["id", "languageId", "description"],
+    numberHeaders: ["id", "languageId"],
+    remoteUrl: `https://github.com/PokeAPI/pokeapi/raw/${BRANCH_OR_COMMIT_HASH}/data/v2/csv/move_meta_category_prose.csv`,
+  },
+  // #endregion
+  // #region Move Meta Stat Changes
+  {
+    headers: ["id", "statId", "change"],
+    numberHeaders: ["id", "statId", "change"],
+    remoteUrl: `https://github.com/PokeAPI/pokeapi/raw/${BRANCH_OR_COMMIT_HASH}/data/v2/csv/move_meta_stat_changes.csv`,
+  },
+  // #endregion
+  // #region Move Names
+  {
+    headers: nameHeaders,
+    numberHeaders: nameNumberHeaders,
+    remoteUrl: `https://github.com/PokeAPI/pokeapi/raw/${BRANCH_OR_COMMIT_HASH}/data/v2/csv/move_names.csv`,
+  },
+  // #endregion
+  // #region Move Targets
+  {
+    headers: ["id", "identifier"],
+    numberHeaders: ["id"],
+    remoteUrl: `https://github.com/PokeAPI/pokeapi/raw/${BRANCH_OR_COMMIT_HASH}/data/v2/csv/move_targets.csv`,
+  },
+  // #endregion
+  // #region Move Target Prose
+  {
+    headers: ["id", "languageId", "name", "description"],
+    numberHeaders: ["id", "languageId"],
+    remoteUrl: `https://github.com/PokeAPI/pokeapi/raw/${BRANCH_OR_COMMIT_HASH}/data/v2/csv/move_target_prose.csv`,
   },
   // #endregion
   // #region Pokemon Moves
