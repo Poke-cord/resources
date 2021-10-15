@@ -370,6 +370,29 @@ const resourceInfos: ResourceInfo[] = [
     remoteUrl: `https://github.com/PokeAPI/pokeapi/raw/${BRANCH_OR_COMMIT_HASH}/data/v2/csv/nature_battle_style_preferences.csv`,
   },
   // #endregion
+  // #region Pokemon Abilities
+  {
+    headers: ["id", "abilityId", "isHidden", "slot"],
+    numberHeaders: ["id", "abilityId", "slot"],
+    booleanHeaders: ["isHidden"],
+    remoteUrl: `https://github.com/PokeAPI/pokeapi/raw/${BRANCH_OR_COMMIT_HASH}/data/v2/csv/pokemon_abilities.csv`,
+    preSave: (elements) => {
+      const grouped = groupBy(elements, "id");
+      return Object.keys(grouped).map((x) => {
+        return {
+          id: parseInt(x),
+          abilities: grouped[x].map((x) => {
+            return {
+              id: x.id,
+              isHidden: x.isHidden,
+              slot: x.slot,
+            };
+          }),
+        };
+      });
+    },
+  },
+  // #endregion
   // #region Pokemon Moves
   {
     headers: [
