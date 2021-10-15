@@ -377,6 +377,7 @@ const resourceInfos: ResourceInfo[] = [
     prePush: (parsedObj) => {
       if (parsedObj.generationId)
         parsedObj.romanGenerationId = romanize(parsedObj.generationId);
+      parsedObj.name = toTitleCase(identifierToName(parsedObj.identifier));
       return parsedObj;
     },
   },
