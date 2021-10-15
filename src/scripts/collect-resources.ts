@@ -57,7 +57,7 @@ const resourceInfos: ResourceInfo[] = [
   // #endregion
   // #region Ability Prose
   {
-    headers: ["id", "languageId", "shortEffect"],
+    headers: ["id", "languageId", "shortEffect", "effect"],
     numberHeaders: ["id", "languageId"],
     remoteUrl: `https://github.com/PokeAPI/pokeapi/raw/${BRANCH_OR_COMMIT_HASH}/data/v2/csv/ability_prose.csv`,
   },
