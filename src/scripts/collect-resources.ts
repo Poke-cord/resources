@@ -16,7 +16,7 @@ import { DATA_PATH } from "../util/constants";
 import { IMachine } from "../util/structures";
 //  #endregion
 
-const BRANCH_OR_COMMIT_HASH = "5e803da514ade0d3770a8fef2ee093250f8dfc20";
+const BRANCH_OR_COMMIT_HASH = "2413a4cf1f1c5842353ad0414c63fd7675530688";
 
 interface ResourceInfo {
   booleanHeaders?: string[];
