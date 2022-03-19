@@ -197,7 +197,7 @@ describe("Pokémon", () => {
     // Moves data test
     // Basic moves data test
     expect(bulbasaur.moves).toBeDefined();
-    expect(bulbasaur.moves.length).toBe(84);
+    expect(bulbasaur.moves.length).toBe(91);
     const razorLeaf = bulbasaur.moves.find((x) => x.name === "Razor Leaf");
     expect(razorLeaf).toBeDefined();
     expect(razorLeaf.accuracy).toBe(95);
@@ -214,11 +214,11 @@ describe("Pokémon", () => {
     expect(razorLeaf.power).toBe(55);
     expect(razorLeaf.pp).toBe(25);
     expect(razorLeaf.priority).toBe(0);
-    expect(razorLeaf.requiredLevel).toBe(19);
+    expect(razorLeaf.requiredLevel).toBe(12);
     expect(razorLeaf.superContestEffectId).toBe(5);
     expect(razorLeaf.targetId).toBe(11);
     expect(razorLeaf.typeId).toBe(12);
-    expect(razorLeaf.versionGroupId).toBe(18);
+    expect(razorLeaf.versionGroupId).toBe(20);
 
     // Move meta data test
     expect(razorLeaf.meta.ailmentChance).toBe(0);
@@ -267,7 +267,7 @@ describe("Pokémon", () => {
     // Basic species data test
     expect(bulbasaur.species).toBeDefined();
     expect(bulbasaur.species.genus).toBe("Seed Pokémon");
-    expect(bulbasaur.species.baseHappiness).toBe(70);
+    expect(bulbasaur.species.baseHappiness).toBe(50);
     expect(bulbasaur.species.captureRate).toBe(45);
     expect(bulbasaur.species.colorId).toBe(5);
     expect(bulbasaur.species.evolutionChainId).toBe(1);
@@ -303,7 +303,7 @@ describe("Pokémon", () => {
 
     // Basic data test
     expect(zeraora).toBeDefined();
-    expect(zeraora.baseExp).toBe(270);
+    expect(zeraora.baseExp).toBe(300);
     expect(zeraora.colorCode).toBe(16776960);
     expect(zeraora.formName).toBeNull();
     expect(zeraora.height).toBe(15);
@@ -311,7 +311,7 @@ describe("Pokémon", () => {
     expect(zeraora.identifier).toBe("zeraora");
     expect(zeraora.isDefault).toBe(true);
     expect(zeraora.name).toBe("Zeraora");
-    expect(zeraora.order).toBe(964);
+    expect(zeraora.order).toBe(988);
     expect(zeraora.speciesId).toBe(807);
     expect(zeraora.weight).toBe(445);
 
@@ -322,7 +322,7 @@ describe("Pokémon", () => {
     // Moves data test
     // Basic moves data test
     expect(zeraora.moves).toBeDefined();
-    expect(zeraora.moves.length).toBe(49);
+    expect(zeraora.moves.length).toBe(90);
     const plasmaFists = zeraora.moves.find((x) => x.name === "Plasma Fists");
     expect(plasmaFists).toBeDefined();
     expect(plasmaFists.accuracy).toBe(100);
@@ -339,11 +339,11 @@ describe("Pokémon", () => {
     expect(plasmaFists.power).toBe(100);
     expect(plasmaFists.pp).toBe(15);
     expect(plasmaFists.priority).toBe(0);
-    expect(plasmaFists.requiredLevel).toBe(43);
+    expect(plasmaFists.requiredLevel).toBe(88);
     expect(plasmaFists.superContestEffectId).toBe(0);
     expect(plasmaFists.targetId).toBe(10);
     expect(plasmaFists.typeId).toBe(13);
-    expect(plasmaFists.versionGroupId).toBe(18);
+    expect(plasmaFists.versionGroupId).toBe(20);
 
     // Move meta data test
     expect(plasmaFists.meta.ailmentChance).toBe(0);
